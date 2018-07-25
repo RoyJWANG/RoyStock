@@ -193,7 +193,10 @@ plot_title<-gsub("n", n, "Top n Stocks")
 #plot_title
 
 #generate the final plot
-gg<-ggplot(PSTD.long) + geom_line(aes(x=date, y=value, color=Popular_Stock)) + labs(title=plot_title)
+help.search("geom_", package = "ggplot2")
+
+gg<-ggplot(PSTD.long, 
+           aes(x=date, y=value, color=Popular_Stock)) + geom_line() + geom_point() + labs(title=plot_title)
 
 print(gg)
 
